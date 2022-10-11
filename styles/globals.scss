@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap');
+
+html, body {
+  background-color: #000;
+  color: #fff;
+  font-family: system-ui, Segoe UI, Helvetica Neue, Arial;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  color: var(--color-dark-gray);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+:root {
+  --max-width-s : 640px;
+  --max-width-m : 1024px;
+  --max-width-l : 1440px;
+  --baseline : 30px;
+  --color-dark-gray: #212121;
+}
+
+img {
+  max-width: 100%;
+  width: auto;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  color: #fff;
+}
+
+h1, h2, h3, h4 {
+  line-height: 1.2;
+}
+
+h1 { font-size: 80px; }
+
+h2 { font-size: 60px; }
+
+h3 { font-size: 40px; }
+
+h4 { font-size: 30px; }
+
+h5 { font-size: 25px; }
+
+h6 { font-size: 20px; }
+
+@media (max-width: 1024px) {
+  h1 { font-size: 50px; }
+
+  h2 { font-size: 35px; }
+
+  h3 { font-size: 30px; }
+
+  h4 { font-size: 25px; }
+
+  h5 { font-size: 20px; }
+
+  h6 { font-size: 18px; }
+}

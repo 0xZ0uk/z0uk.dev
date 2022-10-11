@@ -1,0 +1,16 @@
+.container {
+  padding: 0 2rem;
+}
+
+.tagline {
+  align-self: flex-end;
+  width: 50%;
+  font-family: 'Playfair Display';
+  font-weight: 800;
+}
+
+.featured {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
