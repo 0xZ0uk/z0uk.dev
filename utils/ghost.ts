@@ -3,7 +3,7 @@ import GhostContentAPI from "@tryghost/content-api";
 // Create an instance of the GhostContentAPI
 const api = new GhostContentAPI({
   url: "https://cms.bluapps.xyz",
-  key: "f5f79c9fd34166109c3829121d", // replace this with your API key
+  key: process.env.NEXT_PUBLIC_CONTENT_API || "", // replace this with your API key
   version: "v4",
 });
 
