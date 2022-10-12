@@ -5,7 +5,6 @@ $left-offset: calc((100vw - $site-width) / 2);
   position: absolute;
   top: 0;
   width: $site-width;
-  height: 100vh;
   left: $left-offset;
   z-index: 10;
   padding-bottom: 4rem;
@@ -69,5 +68,18 @@ $left-offset: calc((100vw - $site-width) / 2);
   }
   100% {
       -webkit-transform: scale(1.0, 1.0); opacity: 1.0;
+  }
+}
+
+.postSingleContainer {
+  .headerWrapper {
+    position: absolute;
+    width: $site-width;
+    left: $left-offset;
+    margin: 0 auto;
+  }
+
+  .mainContainer {
+    width: 100vw;
   }
 }

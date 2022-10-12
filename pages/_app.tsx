@@ -4,6 +4,8 @@ import { GridProvider } from "@faceless-ui/css-grid";
 import Layout from "../components/Layout";
 
 function MyApp({ Component, pageProps }: AppProps) {
+  const isPost = Object.keys(pageProps)[0] === "post";
+
   return (
     <GridProvider
       breakpoints={{
@@ -30,7 +32,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         xl: 12,
       }}
     >
-      <Layout>
+      <Layout type={isPost ? "post" : "page"}>
         <Component {...pageProps} />
       </Layout>
     </GridProvider>

@@ -22,6 +22,8 @@ export const getSinglePost = async (slug: string) => {
   try {
     return await api.posts.read({
       slug,
+    }, {
+      include: ["authors", "tags"]
     });
   } catch (error) {
     console.error(error);

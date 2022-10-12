@@ -26,7 +26,7 @@ $wrapper-border-color: rgba(#ffffff, 0.1);
     animation: bounce 2.5s ease-in-out;
   }
 
-  .category {
+  .state {
     background-color: #fff;
     color: #000;
     width: fit-content;
@@ -48,8 +48,8 @@ $wrapper-border-color: rgba(#ffffff, 0.1);
     font-weight: 400;
   }
 
-  .author {
-    font-size: 14px;
+  .readmore {
+    margin: 3rem 0 1rem;
   }
 }
 

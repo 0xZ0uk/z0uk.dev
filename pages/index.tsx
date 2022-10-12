@@ -10,34 +10,8 @@ import { getPosts } from "../utils/ghost";
 import { useEffect } from "react";
 import Footer from "../components/Footer";
 
-const posts2 = [
-  {
-    id: 0,
-    title: "PassPortfolio",
-    description: "Lorem ipsum dolor sit amet.",
-    author: "Pedro Santana",
-    category: "Project",
-  },
-  {
-    id: 1,
-    title: "How to use useReducer() hook",
-    author: "Pedro Santana",
-    category: "Article",
-  },
-  {
-    id: 2,
-    title: "How to use useReducer(), useEffect() and useState() hooks",
-    author: "Pedro Santana",
-    category: "Article",
-  },
-];
-
 const Home = (props: any) => {
   const { posts = [] } = props;
-
-  useEffect(() => {
-    console.log(posts[1].tags[0].name);
-  }, []);
 
   return (
     <div className={styles.container}>
@@ -63,7 +37,7 @@ const Home = (props: any) => {
           <div className={styles.featured}>
             <Featured mul={2} />
             <Featured />
-            <Featured />
+            <Featured mul={1} />
           </div>
         </Cell>
         <Section
@@ -77,6 +51,7 @@ const Home = (props: any) => {
                 title={post.title}
                 author={post.authors[0].name}
                 category={post.tags[0]?.name}
+                slug={post.slug}
               />
             </Cell>
           ))}

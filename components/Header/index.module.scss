@@ -5,10 +5,15 @@
   color: #fff;
   padding: 0 3rem;
 
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+
   .logo {
     font-family: 'Space Mono', monospace;
     font-weight: 700;
-    margin: 3rem 0
+    margin: 3rem 0;
   }
 
   .menu {
@@ -16,6 +21,11 @@
     list-style: none;
 
     &Item {
+      margin-right: 20px;
+      cursor: pointer;
+    }
+
+    &Icon {
       margin-right: 20px;
       cursor: pointer;
 

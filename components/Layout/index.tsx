@@ -7,18 +7,38 @@ import BG from "../BG";
 
 type Props = {
   children: any;
+  type?: "page" | "post";
 };
 
-const Layout: React.FC<Props> = ({ children }) => (
-  <React.Fragment>
-    <div className={styles.main}>
-      <Header />
-      <Grid className={styles.mainContainer}>
-        <Cell cols={12}>{children}</Cell>
-      </Grid>
-    </div>
-    <BG />
-  </React.Fragment>
-);
+const Layout: React.FC<Props> = ({ children, type }) => {
+  switch (type) {
+    case "post":
+      return (
+        <React.Fragment>
+          <div className={styles.postSingleContainer}>
+            <div className={styles.headerWrapper}>
+              <Header />
+            </div>
+            <Grid className={styles.mainContainer}>
+              <Cell cols={12}>{children}</Cell>
+            </Grid>
+          </div>
+        </React.Fragment>
+      );
+    case "page":
+    default:
+      return (
+        <React.Fragment>
+          <div className={styles.main}>
+            <Header />
+            <Grid className={styles.mainContainer}>
+              <Cell cols={12}>{children}</Cell>
+            </Grid>
+          </div>
+          <BG />
+        </React.Fragment>
+      );
+  }
+};
 
 export default Layout;

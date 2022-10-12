@@ -6,7 +6,7 @@ type Props = {
 };
 
 const Header: React.FC<Props> = ({ children }) => (
-  <React.Fragment>
+  <div>
     <div className={styles.bgOverlay} />
     <div className={styles.bg}>
       <svg
@@ -32,7 +32,7 @@ const Header: React.FC<Props> = ({ children }) => (
         />
       </svg>
     </div>
-  </React.Fragment>
+  </div>
 );
 
 export default Header;
