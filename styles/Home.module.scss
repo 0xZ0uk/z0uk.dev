@@ -13,3 +13,14 @@
   display: flex;
   align-items: center;  
 }
+
+
+@media (max-width: 768px) {
+  .featured {
+    display: none;
+  }
+
+  .tagline {
+    width: 100%;
+  }
+}
