@@ -21,7 +21,7 @@ const Section: React.FC<Props> = ({
   <>
     <Cell cols={12}>
       <h4 className={styles.sectionTitle} style={style}>
-        {icon}
+        {!!icon && <span className={styles.sectionIcon}>{icon}</span>}
         {title}
       </h4>
     </Cell>

@@ -6,6 +6,7 @@ import styles from "../../styles/PostSingle.module.scss";
 import { Cell, Grid } from "@faceless-ui/css-grid";
 import Section from "../../components/Section";
 import Post from "../../components/Post";
+import Head from "next/head";
 
 const PostSingle = (props: any) => {
   const { post, posts = [] } = props;
@@ -16,6 +17,9 @@ const PostSingle = (props: any) => {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>{post.title} - Pedro Santana</title>
+      </Head>
       <Grid>
         <Cell
           cols={12}
@@ -52,6 +56,7 @@ const PostSingle = (props: any) => {
                         author={p.authors[0].name}
                         category={p.tags[0]?.name}
                         slug={p.slug}
+                        date={p.publishedDate}
                       />
                     </Cell>
                   ))}

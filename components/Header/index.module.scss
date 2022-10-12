@@ -8,12 +8,21 @@
   a {
     color: #fff;
     text-decoration: none;
+    font-weight: 700;
+
+    &:hover {
+      color: #AF67DC;
+    }
   }
 
   .logo {
     font-family: 'Space Mono', monospace;
     font-weight: 700;
     margin: 3rem 0;
+
+    a {
+      color: #fff;
+    }
   }
 
   .menu {
@@ -31,6 +40,10 @@
 
       &:last-child {
         margin-right: 0;
+      }
+
+      &:hover {
+        color: #AF67DC;
       }
     }
   }

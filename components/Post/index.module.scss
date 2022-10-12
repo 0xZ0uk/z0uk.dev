@@ -1,19 +1,20 @@
-$container-border-size: 4px;
-$container-border-color: rgba(#ffffff, 0.1);
-$wrapper-border-size: 2px;
-$wrapper-border-color: rgba(#ffffff, 0.1);
+@import "../../styles/colors.scss";
 
 .container {
   display: flex;
   align-items: flex-start;
   min-height: 200px;
-  background-color: rgba(#131313, 0.95);
+  background-color: rgba($ternary, 0.95);
   margin-bottom: 3rem;
-  box-shadow: inset 0.2em 0.2em 0.2em 0 rgba(#131313,0.5),
-    inset -0.2em -0.2em 0.2em 0 rgba(#af67dc,0.5);
+  box-shadow: inset 0.2em 0.2em 0.2em 0 rgba($ternary,0.5),
+    inset -0.2em -0.2em 0.2em 0 rgba($secondary,0.5);
   border-radius: 15px;
   padding: 2rem;
-  
+
+  &:hover {
+    animation: bounce 2.5s ease-in-out;
+  }
+
   .wrapper {
     display: flex;
     flex-direction: column;
@@ -21,31 +22,44 @@ $wrapper-border-color: rgba(#ffffff, 0.1);
     height: 100%;
   }
 
-  &:hover {
-    cursor: pointer;
-    animation: bounce 2.5s ease-in-out;
+  .preInfo {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
   }
 
   .category {
-    background-color: #fff;
-    color: #000;
+    background-color: $primary;
+    color: $text-post;
     width: fit-content;
     padding: 5px 10px;
     border-radius: 50px;
     text-transform: uppercase;
     font-weight: 800;
     font-size: 12px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $secondary;
+    }
   }
 
   .title {
-    color: #fff;
-    margin: 0;
+    color: $text-page;
+    margin: 0 0 2rem;
     font-weight: 900;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+      text-underline-offset: 1rem;
+    }
   }
 
   .description {
     font-family: 'Space Mono', monospace;
     font-weight: 400;
+    cursor: pointer;
   }
 
   .author {

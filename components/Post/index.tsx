@@ -8,6 +8,7 @@ type Props = {
   description?: string;
   author: string;
   slug: string;
+  date?: string;
 };
 
 const Post: React.FC<Props> = ({
@@ -16,23 +17,33 @@ const Post: React.FC<Props> = ({
   description,
   author,
   slug,
+  date,
 }) => (
   <div className={styles.container}>
-    <Link href={`/posts/${slug}`}>
-      <div className={styles.wrapper}>
-        <div>
-          {!!category && <p className={styles.category}>{category}</p>}
-          <h3 className={styles.title}>{title}</h3>
-          {!!description && (
-            <p className={styles.description}>
-              {description.substring(0, 55)}
-              {description.length > 55 && "..."}
-            </p>
+    <div className={styles.wrapper}>
+      <div>
+        <div className={styles.preInfo}>
+          {!!category && (
+            <Link href={`/categories/${category}`}>
+              <p className={styles.category}>{category}</p>
+            </Link>
           )}
+          {!!date && <p className={styles.date}>{date}</p>}
         </div>
-        <p className={styles.author}>by {author}</p>
+        <Link href={`/posts/${slug}`}>
+          <h3 className={styles.title}>{title}</h3>
+        </Link>
+        {!!description && (
+          <Link href={`/posts/${slug}`}>
+            <p className={styles.description}>
+              {description.substring(0, 255)}
+              {description.length > 255 && "..."}
+            </p>
+          </Link>
+        )}
       </div>
-    </Link>
+      <p className={styles.author}>by {author}</p>
+    </div>
   </div>
 );
 
