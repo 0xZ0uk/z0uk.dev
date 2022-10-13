@@ -4,7 +4,7 @@ import GhostContentAPI from "@tryghost/content-api";
 const api = new GhostContentAPI({
   url: "https://cms.bluapps.xyz",
   key: process.env.NEXT_PUBLIC_CONTENT_API || "", // replace this with your API key
-  version: "v4",
+  version: "v5.0",
 });
 
 export const getPosts = async () => {
@@ -29,3 +29,26 @@ export const getSinglePost = async (slug: string) => {
     console.error(error);
   }
 };
+
+export const getPages = async () => {
+  try {
+    return await api.pages.browse({
+      limit: "all",
+      include: ["tags"]
+    });
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export const getPageBySlug = async (slug: string) => {
+  try {
+    return await api.pages.read({
+      slug,
+    }, {
+      include: ["tags"]
+    });
+  } catch (error) {
+    console.error(error);
+  }
+}

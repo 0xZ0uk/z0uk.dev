@@ -7,11 +7,24 @@ import BG from "../BG";
 
 type Props = {
   children: any;
-  type?: "page" | "post";
+  type?: "page" | "post" | "project";
 };
 
 const Layout: React.FC<Props> = ({ children, type }) => {
   switch (type) {
+    case "project":
+      return (
+        <React.Fragment>
+          <div className={styles.projectSingleContainer}>
+            <div className={styles.headerWrapper}>
+              <Header />
+            </div>
+            <Grid className={styles.mainContainer}>
+              <Cell cols={12}>{children}</Cell>
+            </Grid>
+          </div>
+        </React.Fragment>
+      );
     case "post":
       return (
         <React.Fragment>

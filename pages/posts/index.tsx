@@ -4,6 +4,7 @@ import Head from "next/head";
 import { GoBeaker } from "react-icons/go";
 import Post from "../../components/Post";
 import Section from "../../components/Section";
+import { convertDate } from "../../utils/date";
 import { getPosts } from "../../utils/ghost";
 
 const Blog = (props: any) => {
@@ -26,7 +27,9 @@ const Blog = (props: any) => {
                 title={post.title}
                 author={post.authors[0].name}
                 category={post.tags[0]?.name}
+                description={post.excerpt}
                 slug={post.slug}
+                date={convertDate(post.updated_at)}
               />
             </Cell>
           ))}

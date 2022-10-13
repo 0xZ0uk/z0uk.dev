@@ -6,9 +6,15 @@ type Props = {
   state?: "Coming Soon" | "WIP" | "Launched";
   title: string;
   description?: string;
+  slug?: string;
 };
 
-const ProjectSingle: React.FC<Props> = ({ state, title, description }) => (
+const ProjectSingle: React.FC<Props> = ({
+  state,
+  title,
+  description,
+  slug,
+}) => (
   <div className={styles.container}>
     <div className={styles.wrapper}>
       <div>
@@ -21,7 +27,7 @@ const ProjectSingle: React.FC<Props> = ({ state, title, description }) => (
           </p>
         )}
         <div className={styles.readmore}>
-          <CustomLink label='Read More' to='/projects/passportfolio' />
+          <CustomLink label='Read More' to={`/projects/${slug}`} />
         </div>
       </div>
     </div>

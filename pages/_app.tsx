@@ -5,6 +5,15 @@ import Layout from "../components/Layout";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const isPost = Object.keys(pageProps)[0] === "post";
+  const isProject = Object.keys(pageProps)[0] === "project";
+
+  console.log("pageProps::", Object.keys(pageProps)[0]);
+
+  function getLayoutType() {
+    if (isPost) return "post";
+    if (isProject) return "project";
+    return "page";
+  }
 
   return (
     <GridProvider
@@ -32,7 +41,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         xl: 12,
       }}
     >
-      <Layout type={isPost ? "post" : "page"}>
+      <Layout type={getLayoutType()}>
         <Component {...pageProps} />
       </Layout>
     </GridProvider>
