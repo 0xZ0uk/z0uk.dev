@@ -28,6 +28,7 @@ const PostSingle = (props: any) => {
             background: `url(${post?.feature_image}) #00000077 no-repeat center`,
             backgroundPosition: "center",
             backgroundBlendMode: "multiply",
+            backgroundSize: "cover",
           }}
         >
           <div className={styles.heroWrapper}>
@@ -41,27 +42,29 @@ const PostSingle = (props: any) => {
             dangerouslySetInnerHTML={createMarkup()}
           ></div>
           <div className={styles.readmoreWrapper}>
-            <Section
-              title='Read More'
-              style={{ color: "#000", marginBottom: "2rem" }}
-            >
-              <Grid>
-                {posts
-                  .filter((p: any) => p.id != post.id)
-                  .map((p: any) => (
-                    <Cell key={p.id} cols={4}>
-                      <Post
-                        key={p.id}
-                        title={p.title}
-                        author={p.authors[0].name}
-                        category={p.tags[0]?.name}
-                        slug={p.slug}
-                        date={p.publishedDate}
-                      />
-                    </Cell>
-                  ))}
-              </Grid>
-            </Section>
+            {posts.length > 1 && (
+              <Section
+                title='Read More'
+                style={{ color: "#000", marginBottom: "2rem" }}
+              >
+                <Grid>
+                  {posts
+                    .filter((p: any) => p.id != post.id)
+                    .map((p: any) => (
+                      <Cell key={p.id} cols={4}>
+                        <Post
+                          key={p.id}
+                          title={p.title}
+                          author={p.authors[0].name}
+                          category={p.tags[0]?.name}
+                          slug={p.slug}
+                          date={p.publishedDate}
+                        />
+                      </Cell>
+                    ))}
+                </Grid>
+              </Section>
+            )}
           </div>
         </Cell>
       </Grid>

@@ -3,7 +3,7 @@
   justify-content: space-between;
   align-items: center;
   color: #fff;
-  padding: 0 3rem;
+  padding: 0 1rem;
 
   a {
     color: #fff;
@@ -36,6 +36,8 @@
 
 @media (min-width: 1279px) {
   .header {
+    padding: 0 3rem;
+
     .menu {
       display: flex;
       list-style: none;
