@@ -24,19 +24,27 @@ const Header: React.FC<Props> = ({ children }) => (
         <Link href='/posts'>Blog</Link>
       </li>
       <li className={styles.menuIcon}>
-        <Link href='https://twitter.com/pedrsntana' target='_blank'>
+        <a
+          href='https://twitter.com/pedrsntana'
+          target='_blank'
+          rel='noreferrer'
+        >
           <FaTwitter size={25} />
-        </Link>
+        </a>
       </li>
       <li className={styles.menuIcon}>
-        <Link href='https://www.linkedin.com/in/pedrsantana/' target='_blank'>
+        <a
+          href='https://www.linkedin.com/in/pedrsantana/'
+          target='_blank'
+          rel='noreferrer'
+        >
           <FaLinkedin size={25} />
-        </Link>
+        </a>
       </li>
       <li className={styles.menuIcon}>
-        <Link href='https://github.com/0xZ0uk' target='_blank'>
+        <a href='https://github.com/0xZ0uk' target='_blank' rel='noreferrer'>
           <FaGithub size={25} />
-        </Link>
+        </a>
       </li>
     </ul>
     <div className={styles.megamenu}>
