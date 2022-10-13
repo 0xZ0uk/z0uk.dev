@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./index.module.scss";
 import { FaTwitter, FaLinkedin, FaGithub } from "react-icons/fa";
+import { FiMenu } from "react-icons/fi";
 import Link from "next/link";
 
 type Props = {
@@ -38,6 +39,9 @@ const Header: React.FC<Props> = ({ children }) => (
         </Link>
       </li>
     </ul>
+    <div className={styles.megamenu}>
+      <FiMenu color='#fff' size={25} />
+    </div>
   </div>
 );
 

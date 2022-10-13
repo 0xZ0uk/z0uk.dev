@@ -26,25 +26,41 @@
   }
 
   .menu {
-    display: inherit;
-    list-style: none;
+    display: none;
+  }
 
-    &Item {
-      margin-right: 20px;
-      cursor: pointer;
+  .megamenu {
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 1279px) {
+  .header {
+    .menu {
+      display: flex;
+      list-style: none;
+
+      &Item {
+        margin-right: 20px;
+        cursor: pointer;
+      }
+
+      &Icon {
+        margin-right: 20px;
+        cursor: pointer;
+
+        &:last-child {
+          margin-right: 0;
+        }
+
+        &:hover {
+          color: #AF67DC;
+        }
+      }
     }
 
-    &Icon {
-      margin-right: 20px;
-      cursor: pointer;
-
-      &:last-child {
-        margin-right: 0;
-      }
-
-      &:hover {
-        color: #AF67DC;
-      }
+    .megamenu {
+      display: none;
     }
   }
 }
