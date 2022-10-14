@@ -46,12 +46,12 @@ const Layout: React.FC<Props> = ({ children, type }) => {
       return (
         <React.Fragment>
           <div className={styles.main}>
-            {!!mega && <Megamenu toggleMenu={toggleMega} />}
             <Header toggleMenu={toggleMega} />
             <Grid className={styles.mainContainer}>
               <Cell cols={12}>{children}</Cell>
             </Grid>
           </div>
+          {!!mega && <Megamenu toggleMenu={toggleMega} />}
           <BG />
         </React.Fragment>
       );
