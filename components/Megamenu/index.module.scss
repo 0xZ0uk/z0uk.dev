@@ -3,7 +3,7 @@
   position: fixed;
   width: 100vw;
   height: 100vh;
-  padding: 1rem 2.5rem;
+  
 
   display: flex;
   flex-direction: column;
@@ -16,11 +16,20 @@
     text-decoration: none;
   }
 
+  .menuHeader, .menu {
+    width: 80vw;
+    margin: 0 auto;
+  }
+
   .menuHeader {
-    width: 85vw;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin: 3rem auto;
+
+    h3 {
+      margin: 0
+    }
 
     .closeMenu {
       font-size: 1.5rem;
@@ -33,7 +42,6 @@
     height: 50%;
     list-style: none;
     padding-inline-start: 0;
-
 
     &Item {     
       font-size: 2rem;
