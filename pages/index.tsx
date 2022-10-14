@@ -47,7 +47,7 @@ const Home = (props: any) => {
               icon={<GoBeaker style={{ marginRight: 20 }} />}
             >
               {posts.map((post: any) => (
-                <Cell key={post.id} cols={4}>
+                <Cell key={post.id} cols={4} style={{ marginBottom: "4rem" }}>
                   <Post
                     key={post.id}
                     title={post.title}
