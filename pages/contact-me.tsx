@@ -15,8 +15,16 @@ const ContactMe: NextPage = () => {
         <Cell cols={12}>
           <h2 className={styles.title}>
             If you wish to contact me, you can do so at{" "}
-            <span className={styles.underline}>pedrosantana@duck.com</span>, or
-            just DM me on Twitter/LinkedIn:
+            <span className={styles.underline}>
+              <a
+                href='mailto:pedrosantana@duck.com'
+                target='_blank'
+                rel='noreferrer'
+              >
+                pedrosantana@duck.com
+              </a>
+            </span>
+            , or just DM me on Twitter/LinkedIn:
           </h2>
           <div className={styles.iconContainer}>
             <IconFrame

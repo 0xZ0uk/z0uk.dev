@@ -1,3 +1,5 @@
+@import "../styles/colors.scss";
+
 .container {
   padding: 0 1rem;
 
@@ -8,6 +10,14 @@
     .underline {
       text-decoration: underline;
       text-underline-offset: 1rem;
+      a {
+        font-family: 'Playfair Display', serif;
+        color: $primary;
+
+        &:hover {
+          color: $secondary;
+        }
+      }
     }
   }
 
