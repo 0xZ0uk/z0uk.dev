@@ -37,7 +37,7 @@ const Megamenu: React.FC<Props> = ({ toggleMenu }) => {
           style={{ marginRight: "3rem" }}
           onClick={closeMenu}
         >
-          <Button label='Contact Me' type='beseled' link='/contact-me' />
+          <Button label='Contact Me' type='animated' link='/contact-me' />
         </li>
         <div className={styles.menuIcons}>
           <li className={styles.menuIcon}>
