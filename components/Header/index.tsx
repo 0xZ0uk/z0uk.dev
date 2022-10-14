@@ -28,7 +28,7 @@ const Header: React.FC<Props> = ({ children, toggleMenu }) => {
           <Link href='/posts'>Blog</Link>
         </li>
         <li className={styles.menuItem} style={{ marginRight: "3rem" }}>
-          <Button label='Contact Me' type='beseled' link='/contact-me' />
+          <Button label='Contact Me' type='animated' link='/contact-me' />
         </li>
         <li className={styles.menuIcon}>
           <a

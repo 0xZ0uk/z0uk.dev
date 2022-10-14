@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../Button";
 import CustomLink from "../Link";
 import styles from "./index.module.scss";
 
@@ -26,9 +27,9 @@ const ProjectSingle: React.FC<Props> = ({
             {description.length > 255 && "..."}
           </p>
         )}
-        <div className={styles.readmore}>
-          <CustomLink label='Read More' to={`/projects/${slug}`} />
-        </div>
+      </div>
+      <div className={styles.readmore}>
+        <Button type='filled' label='Learn More' link={`/projects/${slug}`} />
       </div>
     </div>
   </div>

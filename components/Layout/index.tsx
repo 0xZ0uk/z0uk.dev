@@ -26,6 +26,7 @@ const Layout: React.FC<Props> = ({ children, type }) => {
               <Cell cols={12}>{children}</Cell>
             </Grid>
           </div>
+          {!!mega && <Megamenu toggleMenu={toggleMega} />}
         </React.Fragment>
       );
     case "post":
@@ -39,6 +40,7 @@ const Layout: React.FC<Props> = ({ children, type }) => {
               <Cell cols={12}>{children}</Cell>
             </Grid>
           </div>
+          {!!mega && <Megamenu toggleMenu={toggleMega} />}
         </React.Fragment>
       );
     case "page":

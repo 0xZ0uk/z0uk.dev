@@ -10,28 +10,33 @@ type Props = {
 };
 
 const Megamenu: React.FC<Props> = ({ toggleMenu }) => {
+  const closeMenu = () => {
+    toggleMenu(false);
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.menuHeader}>
-        <h3 className={styles.logo}>
+        <h3 className={styles.logo} onClick={closeMenu}>
           <Link href='/'>Z_0</Link>
         </h3>
-        <IoClose
-          className={styles.closeMenu}
-          onClick={() => toggleMenu(false)}
-        />
+        <IoClose className={styles.closeMenu} onClick={closeMenu} />
       </div>
       <ul className={styles.menu}>
-        <li className={styles.menuItem}>
+        <li className={styles.menuItem} onClick={closeMenu}>
           <Link href='/'>Home</Link>
         </li>
-        <li className={styles.menuItem}>
+        <li className={styles.menuItem} onClick={closeMenu}>
           <Link href='/projects'>Projects</Link>
         </li>
-        <li className={styles.menuItem}>
+        <li className={styles.menuItem} onClick={closeMenu}>
           <Link href='/posts'>Blog</Link>
         </li>
-        <li className={styles.menuItem} style={{ marginRight: "3rem" }}>
+        <li
+          className={styles.menuItem}
+          style={{ marginRight: "3rem" }}
+          onClick={closeMenu}
+        >
           <Button label='Contact Me' type='beseled' link='/contact-me' />
         </li>
         <div className={styles.menuIcons}>

@@ -4,15 +4,16 @@ import { Grid, Cell } from "@faceless-ui/css-grid";
 import Post from "../components/Post";
 import styles from "../styles/Home.module.scss";
 import { GoBeaker } from "react-icons/go";
+import { IoConstruct } from "react-icons/io5";
 import Section from "../components/Section";
 import Featured from "../components/Featured";
-import { getPosts } from "../utils/ghost";
-import { useEffect } from "react";
+import { getPages, getPosts } from "../utils/ghost";
 import Footer from "../components/Footer";
 import { convertDate } from "../utils/date";
+import Project from "../components/Project";
 
 const Home = (props: any) => {
-  const { posts = [] } = props;
+  const { posts = [], projects = [] } = props;
 
   return (
     <div className={styles.container}>
@@ -39,24 +40,48 @@ const Home = (props: any) => {
             <Featured mul={1} />
           </div>
         </Cell>
-        <Section
-          title='Articles'
-          icon={<GoBeaker style={{ marginRight: 20 }} />}
-        >
-          {posts.map((post: any) => (
-            <Cell key={post.id} cols={4}>
-              <Post
-                key={post.id}
-                title={post.title}
-                author={post.authors[0].name}
-                category={post.tags[0]?.name}
-                description={post.excerpt}
-                slug={post.slug}
-                date={convertDate(post.updated_at)}
-              />
-            </Cell>
-          ))}
-        </Section>
+        <Cell cols={8}>
+          <Grid>
+            <Section
+              title='Articles'
+              icon={<GoBeaker style={{ marginRight: 20 }} />}
+            >
+              {posts.map((post: any) => (
+                <Cell key={post.id} cols={4}>
+                  <Post
+                    key={post.id}
+                    title={post.title}
+                    author={post.authors[0].name}
+                    category={post.tags[0]}
+                    description={post.excerpt}
+                    slug={post.slug}
+                    date={convertDate(post.updated_at)}
+                  />
+                </Cell>
+              ))}
+            </Section>
+          </Grid>
+        </Cell>
+        <Cell cols={4}>
+          <Grid>
+            <Section
+              title='Projects'
+              icon={<IoConstruct style={{ marginRight: 20 }} />}
+            >
+              {projects.map((post: any) => (
+                <Cell key={post.id} cols={12}>
+                  <Project
+                    key={post.id}
+                    title={post.title}
+                    state={post.tags[0]?.name}
+                    description={post.excerpt}
+                    slug={post.slug}
+                  />
+                </Cell>
+              ))}
+            </Section>
+          </Grid>
+        </Cell>
       </Grid>
       <Footer />
     </div>
@@ -64,16 +89,23 @@ const Home = (props: any) => {
 };
 
 export async function getStaticProps() {
-  const posts = await getPosts();
+  const posts = await getPosts("2");
+  const projects = await getPages();
 
   if (!posts) {
     return {
-      notFound: true,
+      notFoundPosts: true,
+    };
+  }
+
+  if (!projects) {
+    return {
+      notFoundProjects: true,
     };
   }
 
   return {
-    props: { posts },
+    props: { posts, projects },
   };
 }
 

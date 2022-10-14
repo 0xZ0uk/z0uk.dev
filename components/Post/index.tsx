@@ -3,7 +3,7 @@ import React from "react";
 import styles from "./index.module.scss";
 
 type Props = {
-  category?: string;
+  category?: any;
   title: string;
   description?: string;
   author: string;
@@ -24,8 +24,8 @@ const Post: React.FC<Props> = ({
       <div>
         <div className={styles.preInfo}>
           {!!category && (
-            <Link href={`/categories/${category}`}>
-              <p className={styles.category}>{category}</p>
+            <Link href={`/categories/${category.slug}`}>
+              <p className={styles.category}>{category.name}</p>
             </Link>
           )}
           {!!date && <p className={styles.date}>{date}</p>}

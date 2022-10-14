@@ -7,10 +7,10 @@ const api = new GhostContentAPI({
   version: "v5.0",
 });
 
-export const getPosts = async () => {
+export const getPosts = async (limit = "all") => {
   try {
     return await api.posts.browse({
-      limit: "all",
+      limit,
       include: ["authors", "tags"]
     });
   } catch (error) {
@@ -30,6 +30,17 @@ export const getSinglePost = async (slug: string) => {
   }
 };
 
+export const getPostsByCategory = async (category: string) => {
+  try {
+    return await api.posts.browse({
+      include: ["authors", "tags"],
+      filter: [`tag:${category}`]
+    });
+  } catch (error) {
+    console.error(error);
+  }
+}
+
 export const getPages = async () => {
   try {
     return await api.pages.browse({
@@ -47,6 +58,28 @@ export const getPageBySlug = async (slug: string) => {
       slug,
     }, {
       include: ["tags"]
+    });
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export const getCategories = async () => {
+  try {
+    return await api.tags.browse({
+      limit: "all",
+    });
+  } catch (error) {
+    console.error(error);
+  }
+}
+
+export const getCategoryBySlug = async (slug: string) => {
+  try {
+    return await api.tags.read({
+      slug,
+    }, {
+      include: ["count.posts"],
     });
   } catch (error) {
     console.error(error);

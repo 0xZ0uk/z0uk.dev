@@ -1,14 +1,19 @@
 import { Cell, Grid } from "@faceless-ui/css-grid";
 import type { NextPage } from "next";
 import Head from "next/head";
+import React from "react";
 import { GoBeaker } from "react-icons/go";
 import Post from "../../components/Post";
 import Section from "../../components/Section";
 import { convertDate } from "../../utils/date";
-import { getPosts } from "../../utils/ghost";
+import {
+  getCategories,
+  getCategoryBySlug,
+  getPostsByCategory,
+} from "../../utils/ghost";
 
-const Blog = (props: any) => {
-  const { posts = [] } = props;
+const Category: NextPage = (props: any) => {
+  const { category, posts } = props;
 
   return (
     <div>
@@ -17,7 +22,7 @@ const Blog = (props: any) => {
       </Head>
       <Grid>
         <Section
-          title='Articles'
+          title={category.name}
           icon={<GoBeaker style={{ marginRight: 20 }} />}
         >
           {posts.map((post: any) => (
@@ -39,18 +44,28 @@ const Blog = (props: any) => {
   );
 };
 
-export async function getStaticProps() {
-  const posts = await getPosts();
+export async function getStaticProps(ctx: any) {
+  const categories = await getCategories();
+  const category = await getCategoryBySlug(ctx.params.slug);
+  const posts = await getPostsByCategory(ctx.params.slug);
 
-  if (!posts) {
-    return {
-      notFound: true,
-    };
-  }
+  if (!categories) return { notFound: true };
+  if (!category) return { notFound: true };
+  if (!posts) return { notFound: true };
 
   return {
-    props: { posts },
+    props: { categories, category, posts },
   };
 }
 
-export default Blog;
+export async function getStaticPaths() {
+  const categories = await getCategories();
+
+  const paths = categories?.map((category) => ({
+    params: { slug: category.slug },
+  }));
+
+  return { paths, fallback: false };
+}
+
+export default Category;
