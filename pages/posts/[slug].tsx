@@ -51,12 +51,13 @@ const PostSingle = (props: any) => {
                   {posts
                     .filter((p: any) => p.id != post.id)
                     .map((p: any) => (
-                      <Cell key={p.id} cols={4}>
+                      <Cell key={p.id} cols={6}>
                         <Post
                           key={p.id}
                           title={p.title}
                           author={p.authors[0].name}
-                          category={p.tags[0]?.name}
+                          category={p.tags[0]}
+                          description={p.excerpt}
                           slug={p.slug}
                           date={p.publishedDate}
                         />

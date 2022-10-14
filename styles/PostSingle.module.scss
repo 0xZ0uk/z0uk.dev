@@ -12,6 +12,9 @@ $page-width-desktop: 50vw;
     padding: 10rem 0 4rem;
 
     &Wrapper {
+      width: 50%;
+      margin: 0 auto;
+
       h1 {
         margin: 0;
         font-family: 'Playfair Display', serif;
