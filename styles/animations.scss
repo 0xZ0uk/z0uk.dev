@@ -1,0 +1,29 @@
+@keyframes bounce {
+  from {
+      -webkit-transform: translate(0, 0);
+  }
+  25% {
+    -webkit-transform: translate(0, -10px);
+  }
+  80% {
+    -webkit-transform: translate(0, 5px);
+  }
+  to {
+      -webkit-transform: translate(0, 0px);
+  }
+}
+
+@keyframes xs-bounce {
+  from {
+      -webkit-transform: translate(0, 0);
+  }
+  25% {
+    -webkit-transform: translate(0, -5px);
+  }
+  80% {
+    -webkit-transform: translate(0, 2px);
+  }
+  to {
+      -webkit-transform: translate(0, 0px);
+  }
+}

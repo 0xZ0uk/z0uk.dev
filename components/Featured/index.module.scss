@@ -1,3 +1,5 @@
+@import "../../styles/animations.scss";
+
 $container-width: 170px;
 
 .container {
@@ -14,20 +16,5 @@ $container-width: 170px;
 
   &:nth-child(odd) {
     animation-duration: 3s;
-  }
-}
-
-@keyframes bounce {
-  from {
-      -webkit-transform: translate(0, 0);
-  }
-  25% {
-    -webkit-transform: translate(0, -10px);
-  }
-  80% {
-    -webkit-transform: translate(0, 5px);
-  }
-  to {
-      -webkit-transform: translate(0, 0px);
   }
 }

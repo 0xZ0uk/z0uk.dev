@@ -1,0 +1,58 @@
+.container {
+  background-color: #000;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  left: -2.5rem;
+  padding: 1rem 2.5rem;
+
+  display: flex;
+  flex-direction: column;
+  
+
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .menuHeader {
+    width: 85vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .closeMenu {
+      font-size: 1.5rem;
+      color: #fff;
+      cursor: pointer;
+    }
+  }
+
+  .menu {
+    height: 50%;
+    list-style: none;
+    padding-inline-start: 0;
+
+
+    &Item {     
+      font-size: 2rem;
+      font-weight: 700;
+
+      button {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin: 2rem 0;
+      }
+    }
+
+    &Icons {
+      display: flex;
+      margin: 2rem 0;
+    }
+
+    &Icon {
+      font-size: 2rem;
+      margin-right: 2rem;
+    }
+  }
+}
