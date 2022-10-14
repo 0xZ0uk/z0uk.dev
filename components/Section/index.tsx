@@ -9,6 +9,7 @@ type Props = {
   title: string;
   style?: any;
   icon?: JSX.Element;
+  noMarginBottom?: boolean;
 };
 
 const Section: React.FC<Props> = ({
@@ -17,6 +18,7 @@ const Section: React.FC<Props> = ({
   title,
   icon,
   style,
+  noMarginBottom,
 }) => (
   <>
     <Cell cols={12}>
@@ -26,6 +28,7 @@ const Section: React.FC<Props> = ({
       </h4>
     </Cell>
     {children}
+    {!noMarginBottom && <div style={{ marginBottom: "3rem" }}></div>}
   </>
 );
 

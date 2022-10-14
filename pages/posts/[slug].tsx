@@ -75,7 +75,7 @@ const PostSingle = (props: any) => {
 
 export async function getStaticProps(ctx: any) {
   const post = await getSinglePost(ctx.params.slug);
-  const posts = await getPosts();
+  const posts = await getPosts("2");
 
   if (!post) return { notFound: true };
   if (!posts) return { morePostsNotFound: true };
