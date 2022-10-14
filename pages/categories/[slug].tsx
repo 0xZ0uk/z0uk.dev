@@ -18,7 +18,7 @@ const Category: NextPage = (props: any) => {
   return (
     <div>
       <Head>
-        <title>Blog - Pedro Santana</title>
+        <title>{category.name} - Pedro Santana</title>
       </Head>
       <Grid>
         <Section

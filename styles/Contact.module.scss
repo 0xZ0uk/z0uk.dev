@@ -1,0 +1,23 @@
+.container {
+  padding: 0 1rem;
+
+  .title {
+    font-family: 'Playfair Display', serif;
+    line-height: 6rem;
+
+    .underline {
+      text-decoration: underline;
+      text-underline-offset: 1rem;
+    }
+  }
+
+  .iconContainer {
+    display: flex;
+  }
+}
+
+@media (min-width: 1279px) {
+  .container {
+    padding: 0 2rem;
+  }
+}

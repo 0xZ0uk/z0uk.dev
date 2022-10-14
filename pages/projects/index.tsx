@@ -7,10 +7,6 @@ import { getPages } from "../../utils/ghost";
 const Projects = (props: any) => {
   const { projects } = props;
 
-  useEffect(() => {
-    console.log("projects::", projects);
-  }, [projects]);
-
   return (
     <>
       <Head>
