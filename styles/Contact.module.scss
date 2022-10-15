@@ -5,7 +5,8 @@
 
   .title {
     font-family: 'Playfair Display', serif;
-    line-height: 4rem;
+    font-size: 25px;
+    line-height: 3rem;
     word-wrap: break-word;
 
     .underline {
@@ -32,6 +33,7 @@
     padding: 0 2rem;
 
     .title {
+      font-size: 60px;
       line-height: 6rem;
     }
   }
