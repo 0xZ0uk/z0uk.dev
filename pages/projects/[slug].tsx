@@ -28,6 +28,7 @@ const ProjectBySlug = (props: any) => {
             background: `url(${project?.feature_image}) rgba(0,0,0, 0.65) no-repeat center`,
             backgroundPosition: "center",
             backgroundBlendMode: "multiply",
+            backgroundSize: "cover",
           }}
         >
           <div className={styles.heroWrapper}>
