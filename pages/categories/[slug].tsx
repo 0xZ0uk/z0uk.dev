@@ -49,10 +49,6 @@ export async function getStaticProps(ctx: any) {
   const category = await getCategoryBySlug(ctx.params.slug);
   const posts = await getPostsByCategory(ctx.params.slug);
 
-  if (!categories) return { notFound: true };
-  if (!category) return { notFound: true };
-  if (!posts) return { notFound: true };
-
   return {
     props: { categories, category, posts },
   };

@@ -51,9 +51,6 @@ export async function getStaticProps(ctx: any) {
   const project = await getPageBySlug(ctx.params.slug);
   const projects = await getPages();
 
-  if (!project) return { notFound: true };
-  if (!projects) return { morePostsNotFound: true };
-
   return {
     props: { project, projects },
   };

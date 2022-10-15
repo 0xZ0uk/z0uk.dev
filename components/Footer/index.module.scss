@@ -1,7 +1,7 @@
 .footer {
   width: fit-content;
   background-color: rgba(#131313, 0.75);
-  margin: 5rem auto 1rem;
+  margin: 2rem auto 1rem;
   padding: 5px 20px;
   border-radius: 50px;
   font-family: 'Space Mono', monospace;
@@ -11,5 +11,11 @@
 
   p {
     margin: 0;
+  }
+}
+
+@media (min-width: 1279px) {
+  .footer {
+    margin: 5rem auto 1rem;
   }
 }

@@ -31,12 +31,6 @@ const Projects = (props: any) => {
 export async function getStaticProps() {
   const projects = await getPages();
 
-  if (!projects) {
-    return {
-      notFound: true,
-    };
-  }
-
   return {
     props: { projects },
   };

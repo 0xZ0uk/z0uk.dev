@@ -92,18 +92,6 @@ export async function getStaticProps() {
   const posts = await getPosts("2");
   const projects = await getPages();
 
-  if (!posts) {
-    return {
-      notFoundPosts: true,
-    };
-  }
-
-  if (!projects) {
-    return {
-      notFoundProjects: true,
-    };
-  }
-
   return {
     props: { posts, projects },
   };

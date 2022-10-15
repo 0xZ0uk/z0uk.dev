@@ -12,7 +12,7 @@ $page-width-desktop: 50vw;
     padding: 10rem 0 4rem;
 
     &Wrapper {
-      width: 50%;
+      width: $page-width;
       margin: 0 auto;
 
       h1 {
@@ -28,6 +28,10 @@ $page-width-desktop: 50vw;
         font-size: 2rem;
       }
     }
+  }
+
+  .postMain {
+    padding-bottom: 2rem;
   }
 
   .htmlWrapper {
@@ -55,6 +59,12 @@ $page-width-desktop: 50vw;
 
 @media (min-width: 1279px) {
   .container {
+    .hero {
+      &Wrapper {
+        width: $page-width-desktop;
+      }
+    }
+
     .htmlWrapper {
       width: $page-width-desktop;
     }

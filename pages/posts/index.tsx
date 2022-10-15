@@ -42,12 +42,6 @@ const Blog = (props: any) => {
 export async function getStaticProps() {
   const posts = await getPosts();
 
-  if (!posts) {
-    return {
-      notFound: true,
-    };
-  }
-
   return {
     props: { posts },
   };
