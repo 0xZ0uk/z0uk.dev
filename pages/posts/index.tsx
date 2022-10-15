@@ -6,6 +6,7 @@ import Post from "../../components/Post";
 import Section from "../../components/Section";
 import { convertDate } from "../../utils/date";
 import { getPosts } from "../../utils/ghost";
+import styles from "../../styles/Posts.module.scss";
 
 const Blog = (props: any) => {
   const { posts = [] } = props;
@@ -15,13 +16,13 @@ const Blog = (props: any) => {
       <Head>
         <title>Blog - Pedro Santana</title>
       </Head>
-      <Grid>
+      <Grid className={styles.container}>
         <Section
           title='Articles'
           icon={<GoBeaker style={{ marginRight: 20 }} />}
         >
           {posts.map((post: any) => (
-            <Cell key={post.id} cols={4}>
+            <Cell key={post.id} cols={4} className={styles.post}>
               <Post
                 key={post.id}
                 title={post.title}

@@ -1,7 +1,6 @@
 import { Cell, Grid } from "@faceless-ui/css-grid";
 import Head from "next/head";
 import { useEffect } from "react";
-import ProjectSingle from "../../components/Project";
 import { getPageBySlug, getPages } from "../../utils/ghost";
 import styles from "../../styles/ProjectSingle.module.scss";
 

@@ -1,0 +1,13 @@
+.container {
+  .post {
+    margin-bottom: 5rem;
+  }
+}
+
+@media (min-width: 1279px) {
+  .container {
+    .post {
+      margin-bottom: 0;
+    }
+  }
+}

@@ -1,3 +1,6 @@
+$page-width: 80vw;
+$page-width-desktop: 50vw;
+
 .container {
   background-color: #000;
 
@@ -25,7 +28,7 @@
   }
 
   .htmlWrapper {
-    width: 50vw;
+    width: $page-width;
     margin: 0 auto 5rem;
 
     h1, h2, h3, h4, h5, h6 {
@@ -38,5 +41,11 @@
       text-align: left;
       font-family: 'Space Mono', monospace;
     }
+  }
+}
+
+@media (min-width: 1279px) {
+  .htmlWrapper {
+    width: $page-width-desktop;
   }
 }
