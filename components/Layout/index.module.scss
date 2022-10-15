@@ -78,6 +78,7 @@ $left-offset: calc((100vw - $site-width) / 2);
     width: $site-width;
     left: $left-offset;
     margin: 0 auto;
+    z-index: 100;
   }
 
   .mainContainer {

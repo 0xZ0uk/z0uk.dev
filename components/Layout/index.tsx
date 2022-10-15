@@ -18,6 +18,7 @@ const Layout: React.FC<Props> = ({ children, type }) => {
     case "project":
       return (
         <React.Fragment>
+          {!!mega && <Megamenu toggleMenu={toggleMega} />}
           <div className={styles.projectSingleContainer}>
             <div className={styles.headerWrapper}>
               <Header toggleMenu={toggleMega} />
@@ -26,7 +27,6 @@ const Layout: React.FC<Props> = ({ children, type }) => {
               <Cell cols={12}>{children}</Cell>
             </Grid>
           </div>
-          {!!mega && <Megamenu toggleMenu={toggleMega} />}
         </React.Fragment>
       );
     case "post":
