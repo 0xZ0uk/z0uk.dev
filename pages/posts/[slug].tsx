@@ -1,6 +1,6 @@
 // eslint-disable-next-line @next/next/no-document-import-in-page
 import type { NextPage } from "next";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { getPosts, getSinglePost } from "../../utils/ghost";
 import styles from "../../styles/PostSingle.module.scss";
 import { Cell, Grid } from "@faceless-ui/css-grid";
@@ -10,10 +10,16 @@ import Head from "next/head";
 
 const PostSingle = (props: any) => {
   const { post, posts = [] } = props;
+  const [markup, setMarkup] = useState<any>();
 
   function createMarkup() {
-    return { __html: post.html };
+    setMarkup({ __html: post.html });
   }
+
+  useEffect(() => {
+    createMarkup();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [post.html]);
 
   return (
     <div className={styles.container}>
@@ -39,7 +45,7 @@ const PostSingle = (props: any) => {
         <Cell cols={12} className={styles.postMain}>
           <div
             className={styles.htmlWrapper}
-            dangerouslySetInnerHTML={createMarkup()}
+            dangerouslySetInnerHTML={markup}
           ></div>
           <div className={styles.readmoreWrapper}>
             {posts.length > 1 && (
